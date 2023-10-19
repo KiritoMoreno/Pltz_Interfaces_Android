@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Distribuyendo nuestros valores-->
+<!-- Agregaremos una Librería que nos permitirá colocar una foto de forma circular, para esto copiamos la siguiente librería:
+
+implementation 'de.hdodenhof:circleimageview:3.1.0' Enlace del Github
+
+La pegamos en los archivos de Gradle > build.gradle(Module:app) y la pegaremos dentro de dependencies; posteriormente Android pedirá que se sincronice el proyecto (Barra azul superior) [Lo que hace android es descargar toda la librería] ***Luego regresaremos a Usage y copiaremos el código y lo pegaremos en el activity.
+
+ConstraitLayout a diferencia de RelativeLayout no va a estirar las vistas-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -41,6 +47,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etLoginUsername" />
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/virgo"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#FF000000"
+        />
     <Button
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
