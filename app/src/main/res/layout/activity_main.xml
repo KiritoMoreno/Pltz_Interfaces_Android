@@ -1,58 +1,57 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Ocupar una región en la pantalla,dependiendo del elemento más grande que queremos (uno sobre otro) -->
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><!-- Es importante que todos los elemetos dentro de un constraintLayout deben tener al menos una alineación horizontal y una alineación vertical; sino AS no va a permitirnos compilar nuestro proyecto.-->
+<!-- El ConstraintLayout es que se encarga de que los elementos estén estirados con respectos a otros. Ejemplo: Si se hiciera invisible el elemento usuario el elemento password heredaría la configuración previa de usuario.-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:orientation="vertical"
     android:background="@android:color/white"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <ImageView
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="12dp"
         android:id="@+id/ivLoginLogo"
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:src="@drawable/virgo"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
-        android:layout_gravity=""
         android:id="@+id/etLoginUsername"
-        android:layout_marginTop="230dp"
-        android:drawablePadding="12dp"
-        android:drawableStart="@drawable/vector_person"
-        android:hint="@string/hint_usuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
+        android:layout_margin="12dp"
+        android:drawableStart="@drawable/vector_person"
+        android:drawablePadding="12dp"
+        android:hint="@string/hint_usuario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivLoginLogo" />
 
-        />
     <EditText
         android:id="@+id/etPassword"
-        android:layout_marginTop="290dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
         android:drawableStart="@drawable/vector_lock"
         android:drawablePadding="12dp"
         android:hint="@string/hint_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etLoginUsername" />
 
     <Button
-        android:layout_gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="12dp"
-        android:background="@color/colorPrimary"
-        android:text="@string/button_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
+        android:background="@color/colorPrimary"
+        android:text="@string/button_login" />
 
 
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
