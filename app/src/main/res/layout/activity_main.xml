@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Es importante que todos los elemetos dentro de un constraintLayout deben tener al menos una alineación horizontal y una alineación vertical; sino AS no va a permitirnos compilar nuestro proyecto.-->
+<!-- Distribuyendo nuestros valores-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,8 +12,8 @@
 
     <ImageView
         android:id="@+id/ivLoginLogo"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="@dimen/width_logo"
+        android:layout_height="@dimen/height_logo"
         android:src="@drawable/virgo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,6 @@
         style="@style/AppTheme.EditTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
         android:drawableStart="@drawable/vector_person"
         android:hint="@string/hint_usuario"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +35,6 @@
         style="@style/AppTheme.EditTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
         android:drawableStart="@drawable/vector_lock"
         android:hint="@string/hint_password"
         app:layout_constraintEnd_toEndOf="parent"
