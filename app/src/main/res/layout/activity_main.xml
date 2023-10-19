@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Agregaremos una Librería que nos permitirá colocar una foto de forma circular, para esto copiamos la siguiente librería:
-
-implementation 'de.hdodenhof:circleimageview:3.1.0' Enlace del Github
-
-La pegamos en los archivos de Gradle > build.gradle(Module:app) y la pegaremos dentro de dependencies; posteriormente Android pedirá que se sincronice el proyecto (Barra azul superior) [Lo que hace android es descargar toda la librería] ***Luego regresaremos a Usage y copiaremos el código y lo pegaremos en el activity.
-
-ConstraitLayout a diferencia de RelativeLayout no va a estirar las vistas-->
+<!-- Reutilizando elementos-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -16,14 +10,12 @@ ConstraitLayout a diferencia de RelativeLayout no va a estirar las vistas-->
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/ivLoginLogo"
-        android:layout_width="@dimen/width_logo"
-        android:layout_height="@dimen/height_logo"
-        android:src="@drawable/virgo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <include
+        layout="@layout/merge_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="177dp"
+        tools:layout_editor_absoluteY="115dp" />
 
     <EditText
         android:id="@+id/etLoginUsername"
