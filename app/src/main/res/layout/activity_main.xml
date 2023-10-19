@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Es importante que todos los elemetos dentro de un constraintLayout deben tener al menos una alineación horizontal y una alineación vertical; sino AS no va a permitirnos compilar nuestro proyecto.-->
-<!-- El ConstraintLayout es que se encarga de que los elementos estén estirados con respectos a otros. Ejemplo: Si se hiciera invisible el elemento usuario el elemento password heredaría la configuración previa de usuario.-->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Es importante que todos los elemetos dentro de un constraintLayout deben tener al menos una alineación horizontal y una alineación vertical; sino AS no va a permitirnos compilar nuestro proyecto.-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -21,11 +21,11 @@
 
     <EditText
         android:id="@+id/etLoginUsername"
+        style="@style/AppTheme.EditTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
         android:drawableStart="@drawable/vector_person"
-        android:drawablePadding="12dp"
         android:hint="@string/hint_usuario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,11 +33,11 @@
 
     <EditText
         android:id="@+id/etPassword"
+        style="@style/AppTheme.EditTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
         android:drawableStart="@drawable/vector_lock"
-        android:drawablePadding="12dp"
         android:hint="@string/hint_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
